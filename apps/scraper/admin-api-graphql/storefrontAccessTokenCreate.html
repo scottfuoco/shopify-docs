@@ -1,0 +1,134 @@
+
+          <h1>storefrontAccessTokenCreate - admin-graphql - MUTATION</h1>
+
+<p>Version: 2025-01</p>
+
+<h2>Description:</h2>
+Creates a storefront access token for use with the [Storefront API](https://shopify.dev/docs/api/storefront).
+
+An app can have a maximum of 100 active storefront access tokens for each shop.
+
+[Get started with the Storefront API](https://shopify.dev/docs/storefronts/headless/building-with-the-storefront-api/getting-started).
+
+<h3>Access Scopes</h3>
+
+
+
+  <h2>Arguments</h2>
+  <ul>
+      <li>
+        <a href="/docs/api/admin-graphql/2025-01/input-objects/StorefrontAccessTokenInput">input</a>:
+        StorefrontAccessTokenInput! -
+        Provides the input fields for creating a storefront access token.
+      </li>
+  </ul>
+
+  <h2>Returns</h2>
+  <ul>
+      <li>
+        <a href="/docs/api/admin-graphql/2025-01/objects/Shop">shop</a>:
+        Shop!
+        The user's shop.
+      </li>
+      <li>
+        <a href="/docs/api/admin-graphql/2025-01/objects/StorefrontAccessToken">storefrontAccessToken</a>:
+        StorefrontAccessToken
+        The storefront access token.
+      </li>
+      <li>
+        <a href="/docs/api/admin-graphql/2025-01/objects/UserError">userErrors</a>:
+        UserError!
+        The list of errors that occurred from executing the mutation.
+      </li>
+  </ul>
+
+
+<h2>Examples</h2>
+<ul>
+  <li>
+      <h3>Create a Storefront Access Token</h3>
+      <pre>        Curl example: "curl -X POST \\\nhttps://your-development-store.myshopify.com/admin/api/2025-01/graphql.json \\\n-H 'Content-Type: application/json' \\\n-H 'X-Shopify-Access-Token: {access_token}' \\\n-d '{\n\"query\": \"mutation StorefrontAccessTokenCreate($input: StorefrontAccessTokenInput!) { storefrontAccessTokenCreate(input: $input) { userErrors { field message } shop { id } storefrontAccessToken { accessScopes { handle } accessToken title } } }\",\n \"variables\": {\n    \"input\": {\n      \"title\": \"New Storefront Access Token\"\n    }\n  }\n}'\n"
+        Node example: "const client = new shopify.clients.Graphql({session});\nconst data = await client.query({\n  data: {\n    \"query\": `mutation StorefrontAccessTokenCreate($input: StorefrontAccessTokenInput!) {\n      storefrontAccessTokenCreate(input: $input) {\n        userErrors {\n          field\n          message\n        }\n        shop {\n          id\n        }\n        storefrontAccessToken {\n          accessScopes {\n            handle\n          }\n          accessToken\n          title\n        }\n      }\n    }`,\n    \"variables\": {\n      \"input\": {\n        \"title\": \"New Storefront Access Token\"\n      }\n    },\n  },\n});\n"
+        Ruby example: "session = ShopifyAPI::Auth::Session.new(\n  shop: \"your-development-store.myshopify.com\",\n  access_token: access_token\n)\nclient = ShopifyAPI::Clients::Graphql::Admin.new(\n  session: session\n)\n\nquery = &lt;&lt;~QUERY\n  mutation StorefrontAccessTokenCreate($input: StorefrontAccessTokenInput!) {\n    storefrontAccessTokenCreate(input: $input) {\n      userErrors {\n        field\n        message\n      }\n      shop {\n        id\n      }\n      storefrontAccessToken {\n        accessScopes {\n          handle\n        }\n        accessToken\n        title\n      }\n    }\n  }\nQUERY\n\nvariables = {\n  \"input\": {\n    \"title\": \"New Storefront Access Token\"\n  }\n}\n\nresponse = client.query(query: query, variables: variables)\n"
+        PHP example: "use Shopify\\Clients\\Graphql;\n\n$client = new Graphql(\"your-development-store.myshopify.com\", $accessToken);\n$query = &lt;&lt;&lt;QUERY\n  mutation StorefrontAccessTokenCreate($input: StorefrontAccessTokenInput!) {\n    storefrontAccessTokenCreate(input: $input) {\n      userErrors {\n        field\n        message\n      }\n      shop {\n        id\n      }\n      storefrontAccessToken {\n        accessScopes {\n          handle\n        }\n        accessToken\n        title\n      }\n    }\n  }\nQUERY;\n\n$variables = [\n  \"input\" =&gt; [\n    \"title\" =&gt; \"New Storefront Access Token\",\n  ],\n];\n\n$response = $client-&gt;query([\"query\" =&gt; $query, \"variables\" =&gt; $variables]);\n"
+        Remix example: "const { admin } = await authenticate.admin(request);\n\nconst response = await admin.graphql(\n  `#graphql\n  mutation StorefrontAccessTokenCreate($input: StorefrontAccessTokenInput!) {\n    storefrontAccessTokenCreate(input: $input) {\n      userErrors {\n        field\n        message\n      }\n      shop {\n        id\n      }\n      storefrontAccessToken {\n        accessScopes {\n          handle\n        }\n        accessToken\n        title\n      }\n    }\n  }`,\n  {\n    variables: {\n      \"input\": {\n        \"title\": \"New Storefront Access Token\"\n      }\n    },\n  },\n);\n\nconst data = await response.json();\n"
+        Graphql query: "mutation StorefrontAccessTokenCreate($input: StorefrontAccessTokenInput!) {\n  storefrontAccessTokenCreate(input: $input) {\n    userErrors {\n      field\n      message\n    }\n    shop {\n      id\n    }\n    storefrontAccessToken {\n      accessScopes {\n        handle\n      }\n      accessToken\n      title\n    }\n  }\n}"
+      </pre>
+      <pre>input: {
+  "input": {
+    "title": "New Storefront Access Token"
+  }
+}</pre>
+      <pre>response: {
+  "data": {
+    "storefrontAccessTokenCreate": {
+      "userErrors": [],
+      "shop": {
+        "id": "gid://shopify/Shop/325953821"
+      },
+      "storefrontAccessToken": {
+        "accessScopes": [
+          {
+            "handle": "unauthenticated_read_product_listings"
+          },
+          {
+            "handle": "unauthenticated_write_checkouts"
+          },
+          {
+            "handle": "unauthenticated_read_checkouts"
+          },
+          {
+            "handle": "unauthenticated_read_selling_plans"
+          }
+        ],
+        "accessToken": "d016c3f69af5f85abdcd3b3252469efc",
+        "title": "New Storefront Access Token"
+      }
+    }
+  }
+}</pre>
+      <h3>Creates a new StorefrontAccessToken</h3>
+      <pre>        Curl example: "curl -X POST \\\nhttps://your-development-store.myshopify.com/admin/api/2025-01/graphql.json \\\n-H 'Content-Type: application/json' \\\n-H 'X-Shopify-Access-Token: {access_token}' \\\n-d '{\n\"query\": \"mutation storeFrontAccessTokenCreate($input: StorefrontAccessTokenInput!) { storefrontAccessTokenCreate(input: $input) { storefrontAccessToken { id accessToken accessScopes { handle } createdAt title } userErrors { field message } } }\",\n \"variables\": {\n    \"input\": {\n      \"title\": \"New Storefront Access Token\"\n    }\n  }\n}'\n"
+        Node example: "const client = new shopify.clients.Graphql({session});\nconst data = await client.query({\n  data: {\n    \"query\": `mutation storeFrontAccessTokenCreate($input: StorefrontAccessTokenInput!) {\n      storefrontAccessTokenCreate(input: $input) {\n        storefrontAccessToken {\n          id\n          accessToken\n          accessScopes {\n            handle\n          }\n          createdAt\n          title\n        }\n        userErrors {\n          field\n          message\n        }\n      }\n    }`,\n    \"variables\": {\n      \"input\": {\n        \"title\": \"New Storefront Access Token\"\n      }\n    },\n  },\n});\n"
+        Ruby example: "session = ShopifyAPI::Auth::Session.new(\n  shop: \"your-development-store.myshopify.com\",\n  access_token: access_token\n)\nclient = ShopifyAPI::Clients::Graphql::Admin.new(\n  session: session\n)\n\nquery = &lt;&lt;~QUERY\n  mutation storeFrontAccessTokenCreate($input: StorefrontAccessTokenInput!) {\n    storefrontAccessTokenCreate(input: $input) {\n      storefrontAccessToken {\n        id\n        accessToken\n        accessScopes {\n          handle\n        }\n        createdAt\n        title\n      }\n      userErrors {\n        field\n        message\n      }\n    }\n  }\nQUERY\n\nvariables = {\n  \"input\": {\n    \"title\": \"New Storefront Access Token\"\n  }\n}\n\nresponse = client.query(query: query, variables: variables)\n"
+        PHP example: "use Shopify\\Clients\\Graphql;\n\n$client = new Graphql(\"your-development-store.myshopify.com\", $accessToken);\n$query = &lt;&lt;&lt;QUERY\n  mutation storeFrontAccessTokenCreate($input: StorefrontAccessTokenInput!) {\n    storefrontAccessTokenCreate(input: $input) {\n      storefrontAccessToken {\n        id\n        accessToken\n        accessScopes {\n          handle\n        }\n        createdAt\n        title\n      }\n      userErrors {\n        field\n        message\n      }\n    }\n  }\nQUERY;\n\n$variables = [\n  \"input\" =&gt; [\n    \"title\" =&gt; \"New Storefront Access Token\",\n  ],\n];\n\n$response = $client-&gt;query([\"query\" =&gt; $query, \"variables\" =&gt; $variables]);\n"
+        Remix example: "const { admin } = await authenticate.admin(request);\n\nconst response = await admin.graphql(\n  `#graphql\n  mutation storeFrontAccessTokenCreate($input: StorefrontAccessTokenInput!) {\n    storefrontAccessTokenCreate(input: $input) {\n      storefrontAccessToken {\n        id\n        accessToken\n        accessScopes {\n          handle\n        }\n        createdAt\n        title\n      }\n      userErrors {\n        field\n        message\n      }\n    }\n  }`,\n  {\n    variables: {\n      \"input\": {\n        \"title\": \"New Storefront Access Token\"\n      }\n    },\n  },\n);\n\nconst data = await response.json();\n"
+        Graphql query: "mutation storeFrontAccessTokenCreate($input: StorefrontAccessTokenInput!) {\n  storefrontAccessTokenCreate(input: $input) {\n    storefrontAccessToken {\n      id\n      accessToken\n      accessScopes {\n        handle\n      }\n      createdAt\n      title\n    }\n    userErrors {\n      field\n      message\n    }\n  }\n}"
+      </pre>
+      <pre>input: {
+  "input": {
+    "title": "New Storefront Access Token"
+  }
+}</pre>
+      <pre>response: {
+  "data": {
+    "storefrontAccessTokenCreate": {
+      "storefrontAccessToken": {
+        "id": "gid://shopify/StorefrontAccessToken/1003303992",
+        "accessToken": "2a1753b19c85ac630f27391da802765d",
+        "accessScopes": [
+          {
+            "handle": "unauthenticated_read_product_listings"
+          },
+          {
+            "handle": "unauthenticated_write_checkouts"
+          },
+          {
+            "handle": "unauthenticated_read_checkouts"
+          },
+          {
+            "handle": "unauthenticated_read_selling_plans"
+          }
+        ],
+        "createdAt": "2024-10-29T18:54:07Z",
+        "title": "New Storefront Access Token"
+      },
+      "userErrors": []
+    }
+  }
+}</pre>
+  </li>
+</ul>
+
+
+      

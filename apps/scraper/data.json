@@ -1,0 +1,42 @@
+[
+  {
+    "name": "appRevokeAccessScopes",
+    "url": "https://shopify.dev/docs/api/admin-graphql/2025-01/mutations/appRevokeAccessScopes"
+  },
+  {
+    "name": "delegateAccessTokenCreate",
+    "url": "https://shopify.dev/docs/api/admin-graphql/2025-01/mutations/delegateAccessTokenCreate"
+  },
+  {
+    "name": "storefrontAccessTokenCreate",
+    "url": "https://shopify.dev/docs/api/admin-graphql/2025-01/mutations/storefrontAccessTokenCreate"
+  },
+  {
+    "name": "storefrontAccessTokenDelete",
+    "url": "https://shopify.dev/docs/api/admin-graphql/2025-01/mutations/storefrontAccessTokenDelete"
+  },
+  {
+    "name": "AccessScope",
+    "url": "https://shopify.dev/docs/api/admin-graphql/2025-01/objects/AccessScope"
+  },
+  {
+    "name": "DelegateAccessToken",
+    "url": "https://shopify.dev/docs/api/admin-graphql/2025-01/objects/DelegateAccessToken"
+  },
+  {
+    "name": "StorefrontAccessToken",
+    "url": "https://shopify.dev/docs/api/admin-graphql/2025-01/objects/StorefrontAccessToken"
+  },
+  {
+    "name": "app",
+    "url": "https://shopify.dev/docs/api/admin-graphql/2025-01/queries/app"
+  },
+  {
+    "name": "appByHandle",
+    "url": "https://shopify.dev/docs/api/admin-graphql/2025-01/queries/appByHandle"
+  },
+  {
+    "name": "appByKey",
+    "url": "https://shopify.dev/docs/api/admin-graphql/2025-01/queries/appByKey"
+  }
+]

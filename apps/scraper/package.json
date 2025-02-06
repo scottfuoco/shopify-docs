@@ -1,0 +1,33 @@
+{
+  "name": "scraper",
+  "description": "Scrapes the Shopify Developer Docs",
+  "version": "1.0.0",
+  "dependencies": {
+    "@ai-sdk/openai": "catalog:",
+    "@packages/db": "1.0.0",
+    "ai": "catalog:",
+    "cheerio": "^1.0.0",
+    "p-limit": "^6.2.0",
+    "puppeteer": "^24.2.0",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@tooling/eslint": "0.0.0",
+    "@tooling/tsconfig": "0.0.0",
+    "@types/node": "^22",
+    "@types/react": "19.0.8",
+    "@types/react-dom": "19.0.3",
+    "autoprefixer": "^10.4.20",
+    "dotenv-cli": "^8.0.0",
+    "eslint": "catalog:",
+    "postcss": "^8.5.1",
+    "tailwindcss": "^3.4.17",
+    "typescript": "catalog:"
+  },
+  "license": "ISC",
+  "main": "index.js",
+  "scripts": {
+    "scrape": "pnpm with-env tsx src/index.ts",
+    "with-env": "dotenv -e ../../.env --"
+  }
+}

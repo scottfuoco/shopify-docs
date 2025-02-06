@@ -16,10 +16,9 @@
     "dotenv": "^16.4.7",
     "dotenv-cli": "^8.0.0",
     "drizzle-kit": "^0.30.4",
-    "drizzle-seed": "^0.3.1",
     "eslint": "catalog:",
     "prettier": "catalog:",
-    "tsx": "^4.19.2",
+    "tsx": "catalog:",
     "typescript": "catalog:"
   },
   "exports": {
@@ -44,6 +43,8 @@
     "dev": "tsc",
     "format": "prettier --check . --ignore-path ../../.gitignore",
     "lint": "eslint",
+    "generate": "pnpm with-env drizzle-kit generate",
+    "migrate": "pnpm with-env drizzle-kit migrate",
     "push": "pnpm with-env drizzle-kit push",
     "seed": "pnpm with-env tsx src/seed.ts",
     "studio": "pnpm with-env drizzle-kit studio",

@@ -1,5 +1,5 @@
 {
-  "name": "turbo-starter",
+  "name": "shopify-docs",
   "devDependencies": {
     "@tooling/prettier": "0.0.0",
     "prettier": "catalog:",
@@ -18,7 +18,6 @@
     "clean:workspaces": "turbo run clean",
     "db:generate": "turbo -F @packages/db generate",
     "db:push": "turbo -F @packages/db push",
-    "db:seed": "turbo -F @packages/db seed",
     "db:studio": "turbo -F @packages/db studio",
     "dev": "turbo watch dev --continue",
     "dev:next": "turbo watch dev -F web...",

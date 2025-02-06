@@ -1,0 +1,48 @@
+{
+  "name": "StorefrontAccessToken",
+  "category": "admin-graphql",
+  "operationType": "OBJECT",
+  "version": "2025-01",
+  "description": "A token that's used to delegate unauthenticated access scopes to clients that need to access the unauthenticated Storefront API.",
+  "accessScopes": null,
+  "arguments": null,
+  "returns": [
+    {
+      "name": "accessScopes",
+      "type": "AccessScope!",
+      "description": "List of permissions associated with the token.",
+      "docUrl": "/docs/api/admin-graphql/2025-01/objects/AccessScope"
+    },
+    {
+      "name": "accessToken",
+      "type": "String!",
+      "description": "The issued public access token.",
+      "docUrl": "/docs/api/admin-graphql/2025-01/scalars/String"
+    },
+    {
+      "name": "createdAt",
+      "type": "DateTime!",
+      "description": "The date and time when the public access token was created.",
+      "docUrl": "/docs/api/admin-graphql/2025-01/scalars/DateTime"
+    },
+    {
+      "name": "id",
+      "type": "ID!",
+      "description": "A globally-unique ID.",
+      "docUrl": "/docs/api/admin-graphql/2025-01/scalars/ID"
+    },
+    {
+      "name": "title",
+      "type": "String!",
+      "description": "An arbitrary title for each token determined by the developer, used for reference purposes.",
+      "docUrl": "/docs/api/admin-graphql/2025-01/scalars/String"
+    },
+    {
+      "name": "updatedAt",
+      "type": "DateTime!",
+      "description": "The date and time when the storefront access token was updated.",
+      "docUrl": "/docs/api/admin-graphql/2025-01/scalars/DateTime"
+    }
+  ],
+  "examples": null
+}

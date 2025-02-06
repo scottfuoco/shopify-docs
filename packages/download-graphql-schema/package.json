@@ -1,0 +1,21 @@
+{
+  "name": "@packages/download-graphql-schema",
+  "dependencies": {
+    "@graphql-inspector/cli": "5.0.8",
+    "@graphql-inspector/core": "^6.2.1",
+    "@graphql-tools/url-loader": "^8.0.24",
+    "graphql": "^16.10.0",
+    "zx": "8.3.2"
+  },
+  "devDependencies": {
+    "eslint": "catalog:",
+    "prettier": "catalog:",
+    "tsx": "catalog:",
+    "typescript": "catalog:"
+  },
+  "module": "download-graphql-schema.ts",
+  "scripts": {
+    "start": "tsx download-graphql-schema.ts"
+  },
+  "type": "module"
+}

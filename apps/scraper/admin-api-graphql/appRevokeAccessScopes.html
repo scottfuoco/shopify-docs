@@ -1,0 +1,44 @@
+
+          <h1>appRevokeAccessScopes - admin-graphql - MUTATION</h1>
+
+<p>Version: 2025-01</p>
+
+<h2>Description:</h2>
+Revokes access scopes previously granted for an app installation.
+
+<h3>Access Scopes</h3>
+This mutation can only be run on the current app.
+
+
+  <h2>Arguments</h2>
+  <ul>
+      <li>
+        <a href="/docs/api/admin-graphql/2025-01/scalars/String">scopes</a>:
+        String! -
+        The list of scope handles to revoke.
+      </li>
+  </ul>
+
+  <h2>Returns</h2>
+  <ul>
+      <li>
+        <a href="/docs/api/admin-graphql/2025-01/objects/AccessScope">revoked</a>:
+        AccessScope
+        The list of scope handles that have been revoked.
+      </li>
+      <li>
+        <a href="/docs/api/admin-graphql/2025-01/objects/AppRevokeAccessScopesAppRevokeScopeError">userErrors</a>:
+        AppRevokeAccessScopesAppRevokeScopeError!
+        The list of errors that occurred from executing the mutation.
+      </li>
+  </ul>
+
+
+<h2>Examples</h2>
+<ul>
+  <li>
+  </li>
+</ul>
+
+
+      

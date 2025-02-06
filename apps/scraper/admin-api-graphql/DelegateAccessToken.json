@@ -1,0 +1,30 @@
+{
+  "name": "DelegateAccessToken",
+  "category": "admin-graphql",
+  "operationType": "OBJECT",
+  "version": "2025-01",
+  "description": "A token that delegates a set of scopes from the original permission. To learn more about creating delegate access tokens, refer to Delegate OAuth access tokens to subsystems.",
+  "accessScopes": null,
+  "arguments": null,
+  "returns": [
+    {
+      "name": "accessScopes",
+      "type": "String!",
+      "description": "The list of permissions associated with the token.",
+      "docUrl": "/docs/api/admin-graphql/2025-01/scalars/String"
+    },
+    {
+      "name": "accessToken",
+      "type": "String!",
+      "description": "The issued delegate access token.",
+      "docUrl": "/docs/api/admin-graphql/2025-01/scalars/String"
+    },
+    {
+      "name": "createdAt",
+      "type": "DateTime!",
+      "description": "The date and time when the delegate access token was created.",
+      "docUrl": "/docs/api/admin-graphql/2025-01/scalars/DateTime"
+    }
+  ],
+  "examples": null
+}

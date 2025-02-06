@@ -53,10 +53,10 @@ This Turborepo has some additional tools already setup for you:
 
 ## Getting Started
 
-Clone the repository:
+Use the following command to create a new project:
 
 ```sh
-git clone https://github.com/scottfuoco/turbo-starter.git
+npx create-turbo@latest
 ```
 
 ### Build
@@ -64,7 +64,7 @@ git clone https://github.com/scottfuoco/turbo-starter.git
 To build all apps and packages, run the following command:
 
 ```
-cd turbo-starter
+cd my-turbo-app
 pnpm build
 ```
 
@@ -73,6 +73,6 @@ pnpm build
 To develop all apps and packages, run the following command:
 
 ```
-cd turbo-starter
+cd my-turbo-app
 pnpm dev
 ```

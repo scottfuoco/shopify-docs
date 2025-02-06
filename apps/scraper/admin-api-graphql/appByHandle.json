@@ -1,0 +1,234 @@
+{
+  "name": "appByHandle",
+  "category": "admin-graphql",
+  "operationType": "QUERY",
+  "version": "2025-01",
+  "description": "Fetches app by handle. Returns null if the app doesn't exist.",
+  "accessScopes": null,
+  "arguments": [
+    {
+      "name": "handle",
+      "type": "String!",
+      "description": "Handle of the App.",
+      "docUrl": "/docs/api/admin-graphql/2025-01/scalars/String"
+    }
+  ],
+  "returns": [
+    {
+      "name": "apiKey",
+      "type": "String!",
+      "description": "A unique application API identifier.",
+      "docUrl": "/docs/api/admin-graphql/2025-01/scalars/String"
+    },
+    {
+      "name": "appStoreAppUrl",
+      "type": "URL",
+      "description": "App store page URL of the app.",
+      "docUrl": "/docs/api/admin-graphql/2025-01/scalars/URL"
+    },
+    {
+      "name": "appStoreDeveloperUrl",
+      "type": "URL",
+      "description": "App store page URL of the developer who created the app.",
+      "docUrl": "/docs/api/admin-graphql/2025-01/scalars/URL"
+    },
+    {
+      "name": "availableAccessScopes",
+      "type": "AccessScope!",
+      "description": "All requestable access scopes available to the app.",
+      "docUrl": "/docs/api/admin-graphql/2025-01/objects/AccessScope"
+    },
+    {
+      "name": "banner",
+      "type": "Image!",
+      "description": "Banner image for the app.",
+      "docUrl": "/docs/api/admin-graphql/2025-01/objects/Image"
+    },
+    {
+      "name": "description",
+      "type": "String",
+      "description": "Description of the app.",
+      "docUrl": "/docs/api/admin-graphql/2025-01/scalars/String"
+    },
+    {
+      "name": "developerName",
+      "type": "String",
+      "description": "The name of the app developer.",
+      "docUrl": "/docs/api/admin-graphql/2025-01/scalars/String"
+    },
+    {
+      "name": "developerType",
+      "type": "AppDeveloperType!",
+      "description": "The type of app developer.",
+      "docUrl": "/docs/api/admin-graphql/2025-01/enums/AppDeveloperType"
+    },
+    {
+      "name": "developerUrl",
+      "type": "URL!",
+      "description": "Website of the developer who created the app.",
+      "docUrl": "/docs/api/admin-graphql/2025-01/scalars/URL"
+    },
+    {
+      "name": "embedded",
+      "type": "Boolean!",
+      "description": "Whether the app uses the Embedded App SDK.",
+      "docUrl": "/docs/api/admin-graphql/2025-01/scalars/Boolean"
+    },
+    {
+      "name": "failedRequirements",
+      "type": "FailedRequirement!",
+      "description": "Requirements that must be met before the app can be installed.",
+      "docUrl": "/docs/api/admin-graphql/2025-01/objects/FailedRequirement"
+    },
+    {
+      "name": "features",
+      "type": "String!",
+      "description": "A list of app features that are shown in the Shopify App Store listing.",
+      "docUrl": "/docs/api/admin-graphql/2025-01/scalars/String"
+    },
+    {
+      "name": "feedback",
+      "type": "AppFeedback",
+      "description": "Feedback from this app about the store.",
+      "docUrl": "/docs/api/admin-graphql/2025-01/objects/AppFeedback"
+    },
+    {
+      "name": "handle",
+      "type": "String",
+      "description": "Handle of the app.",
+      "docUrl": "/docs/api/admin-graphql/2025-01/scalars/String"
+    },
+    {
+      "name": "icon",
+      "type": "Image!",
+      "description": "Icon that represents the app.",
+      "docUrl": "/docs/api/admin-graphql/2025-01/objects/Image"
+    },
+    {
+      "name": "id",
+      "type": "ID!",
+      "description": "A globally-unique ID.",
+      "docUrl": "/docs/api/admin-graphql/2025-01/scalars/ID"
+    },
+    {
+      "name": "installUrl",
+      "type": "URL",
+      "description": "Webpage where you can install the app.",
+      "docUrl": "/docs/api/admin-graphql/2025-01/scalars/URL"
+    },
+    {
+      "name": "installation",
+      "type": "AppInstallation",
+      "description": "Corresponding AppInstallation for this shop and App. Returns null if the App is not installed.",
+      "docUrl": "/docs/api/admin-graphql/2025-01/objects/AppInstallation"
+    },
+    {
+      "name": "isPostPurchaseAppInUse",
+      "type": "Boolean!",
+      "description": "Whether the app is the post purchase app in use.",
+      "docUrl": "/docs/api/admin-graphql/2025-01/scalars/Boolean"
+    },
+    {
+      "name": "launchUrl",
+      "type": "URL!",
+      "description": "Webpage that the app starts in.",
+      "docUrl": "/docs/api/admin-graphql/2025-01/scalars/URL"
+    },
+    {
+      "name": "navigationItems",
+      "type": "NavigationItem!",
+      "description": "Menu items for the app, which also appear as submenu items in left navigation sidebar in the Shopify admin.",
+      "docUrl": "/docs/api/admin-graphql/2025-01/objects/NavigationItem"
+    },
+    {
+      "name": "optionalAccessScopes",
+      "type": "AccessScope!",
+      "description": "The optional scopes requested by the app. Lists the optional access scopes the app has declared in its configuration. These scopes are optionally requested by the app after installation.",
+      "docUrl": "/docs/api/admin-graphql/2025-01/objects/AccessScope"
+    },
+    {
+      "name": "previouslyInstalled",
+      "type": "Boolean!",
+      "description": "Whether the app was previously installed on the current shop.",
+      "docUrl": "/docs/api/admin-graphql/2025-01/scalars/Boolean"
+    },
+    {
+      "name": "pricingDetails",
+      "type": "String",
+      "description": "Detailed information about the app pricing.",
+      "docUrl": "/docs/api/admin-graphql/2025-01/scalars/String"
+    },
+    {
+      "name": "pricingDetailsSummary",
+      "type": "String!",
+      "description": "Summary of the app pricing details.",
+      "docUrl": "/docs/api/admin-graphql/2025-01/scalars/String"
+    },
+    {
+      "name": "privacyPolicyUrl",
+      "type": "URL",
+      "description": "Link to app privacy policy.",
+      "docUrl": "/docs/api/admin-graphql/2025-01/scalars/URL"
+    },
+    {
+      "name": "publicCategory",
+      "type": "AppPublicCategory!",
+      "description": "The public category for the app.",
+      "docUrl": "/docs/api/admin-graphql/2025-01/enums/AppPublicCategory"
+    },
+    {
+      "name": "published",
+      "type": "Boolean!",
+      "description": "Whether the app is published to the Shopify App Store.",
+      "docUrl": "/docs/api/admin-graphql/2025-01/scalars/Boolean"
+    },
+    {
+      "name": "requestedAccessScopes",
+      "type": "AccessScope!",
+      "description": "The access scopes requested by the app. Lists the access scopes the app has declared in its configuration. Merchant must grant approval to these scopes for the app to be installed.",
+      "docUrl": "/docs/api/admin-graphql/2025-01/objects/AccessScope"
+    },
+    {
+      "name": "screenshots",
+      "type": "Image!",
+      "description": "Screenshots of the app.",
+      "docUrl": "/docs/api/admin-graphql/2025-01/objects/Image"
+    },
+    {
+      "name": "shopifyDeveloped",
+      "type": "Boolean!",
+      "description": "Whether the app was developed by Shopify.",
+      "docUrl": "/docs/api/admin-graphql/2025-01/scalars/Boolean"
+    },
+    {
+      "name": "title",
+      "type": "String!",
+      "description": "Name of the app.",
+      "docUrl": "/docs/api/admin-graphql/2025-01/scalars/String"
+    },
+    {
+      "name": "uninstallMessage",
+      "type": "String!",
+      "description": "Message that appears when the app is uninstalled. For example: By removing this app, you will no longer be able to publish products to MySocialSite or view this app in your Shopify admin. You can re-enable this channel at any time.",
+      "docUrl": "/docs/api/admin-graphql/2025-01/scalars/String"
+    },
+    {
+      "name": "uninstallUrl",
+      "type": "URL",
+      "description": "Webpage where you can uninstall the app.",
+      "docUrl": "/docs/api/admin-graphql/2025-01/scalars/URL"
+    },
+    {
+      "name": "webhookApiVersion",
+      "type": "String!",
+      "description": "The webhook API version for the app.",
+      "docUrl": "/docs/api/admin-graphql/2025-01/scalars/String"
+    }
+  ],
+  "examples": [
+    {
+      "description": null,
+      "code": null
+    }
+  ]
+}

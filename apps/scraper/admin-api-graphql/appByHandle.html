@@ -1,0 +1,212 @@
+
+          <h1>appByHandle - admin-graphql - QUERY</h1>
+
+<p>Version: 2025-01</p>
+
+<h2>Description:</h2>
+Fetches app by handle.
+Returns null if the app doesn't exist.
+
+<h3>Access Scopes</h3>
+
+
+
+  <h2>Arguments</h2>
+  <ul>
+      <li>
+        <a href="/docs/api/admin-graphql/2025-01/scalars/String">handle</a>:
+        String! -
+        Handle of the App.
+      </li>
+  </ul>
+
+  <h2>Returns</h2>
+  <ul>
+      <li>
+        <a href="/docs/api/admin-graphql/2025-01/scalars/String">apiKey</a>:
+        String!
+        A unique application API identifier.
+      </li>
+      <li>
+        <a href="/docs/api/admin-graphql/2025-01/scalars/URL">appStoreAppUrl</a>:
+        URL
+        App store page URL of the app.
+      </li>
+      <li>
+        <a href="/docs/api/admin-graphql/2025-01/scalars/URL">appStoreDeveloperUrl</a>:
+        URL
+        App store page URL of the developer who created the app.
+      </li>
+      <li>
+        <a href="/docs/api/admin-graphql/2025-01/objects/AccessScope">availableAccessScopes</a>:
+        AccessScope!
+        All requestable access scopes available to the app.
+      </li>
+      <li>
+        <a href="/docs/api/admin-graphql/2025-01/objects/Image">banner</a>:
+        Image!
+        Banner image for the app.
+      </li>
+      <li>
+        <a href="/docs/api/admin-graphql/2025-01/scalars/String">description</a>:
+        String
+        Description of the app.
+      </li>
+      <li>
+        <a href="/docs/api/admin-graphql/2025-01/scalars/String">developerName</a>:
+        String
+        The name of the app developer.
+      </li>
+      <li>
+        <a href="/docs/api/admin-graphql/2025-01/enums/AppDeveloperType">developerType</a>:
+        AppDeveloperType!
+        The type of app developer.
+      </li>
+      <li>
+        <a href="/docs/api/admin-graphql/2025-01/scalars/URL">developerUrl</a>:
+        URL!
+        Website of the developer who created the app.
+      </li>
+      <li>
+        <a href="/docs/api/admin-graphql/2025-01/scalars/Boolean">embedded</a>:
+        Boolean!
+        Whether the app uses the Embedded App SDK.
+      </li>
+      <li>
+        <a href="/docs/api/admin-graphql/2025-01/objects/FailedRequirement">failedRequirements</a>:
+        FailedRequirement!
+        Requirements that must be met before the app can be installed.
+      </li>
+      <li>
+        <a href="/docs/api/admin-graphql/2025-01/scalars/String">features</a>:
+        String!
+        A list of app features that are shown in the Shopify App Store listing.
+      </li>
+      <li>
+        <a href="/docs/api/admin-graphql/2025-01/objects/AppFeedback">feedback</a>:
+        AppFeedback
+        Feedback from this app about the store.
+      </li>
+      <li>
+        <a href="/docs/api/admin-graphql/2025-01/scalars/String">handle</a>:
+        String
+        Handle of the app.
+      </li>
+      <li>
+        <a href="/docs/api/admin-graphql/2025-01/objects/Image">icon</a>:
+        Image!
+        Icon that represents the app.
+      </li>
+      <li>
+        <a href="/docs/api/admin-graphql/2025-01/scalars/ID">id</a>:
+        ID!
+        A globally-unique ID.
+      </li>
+      <li>
+        <a href="/docs/api/admin-graphql/2025-01/scalars/URL">installUrl</a>:
+        URL
+        Webpage where you can install the app.
+      </li>
+      <li>
+        <a href="/docs/api/admin-graphql/2025-01/objects/AppInstallation">installation</a>:
+        AppInstallation
+        Corresponding AppInstallation for this shop and App.
+Returns null if the App is not installed.
+      </li>
+      <li>
+        <a href="/docs/api/admin-graphql/2025-01/scalars/Boolean">isPostPurchaseAppInUse</a>:
+        Boolean!
+        Whether the app is the [post purchase](https://shopify.dev/apps/checkout/post-purchase) app in use.
+      </li>
+      <li>
+        <a href="/docs/api/admin-graphql/2025-01/scalars/URL">launchUrl</a>:
+        URL!
+        Webpage that the app starts in.
+      </li>
+      <li>
+        <a href="/docs/api/admin-graphql/2025-01/objects/NavigationItem">navigationItems</a>:
+        NavigationItem!
+        Menu items for the app, which also appear as submenu items in left navigation sidebar in the Shopify admin.
+      </li>
+      <li>
+        <a href="/docs/api/admin-graphql/2025-01/objects/AccessScope">optionalAccessScopes</a>:
+        AccessScope!
+        The optional scopes requested by the app. Lists the optional access scopes the app has declared in its configuration. These scopes are optionally requested by the app after installation.
+      </li>
+      <li>
+        <a href="/docs/api/admin-graphql/2025-01/scalars/Boolean">previouslyInstalled</a>:
+        Boolean!
+        Whether the app was previously installed on the current shop.
+      </li>
+      <li>
+        <a href="/docs/api/admin-graphql/2025-01/scalars/String">pricingDetails</a>:
+        String
+        Detailed information about the app pricing.
+      </li>
+      <li>
+        <a href="/docs/api/admin-graphql/2025-01/scalars/String">pricingDetailsSummary</a>:
+        String!
+        Summary of the app pricing details.
+      </li>
+      <li>
+        <a href="/docs/api/admin-graphql/2025-01/scalars/URL">privacyPolicyUrl</a>:
+        URL
+        Link to app privacy policy.
+      </li>
+      <li>
+        <a href="/docs/api/admin-graphql/2025-01/enums/AppPublicCategory">publicCategory</a>:
+        AppPublicCategory!
+        The public category for the app.
+      </li>
+      <li>
+        <a href="/docs/api/admin-graphql/2025-01/scalars/Boolean">published</a>:
+        Boolean!
+        Whether the app is published to the Shopify App Store.
+      </li>
+      <li>
+        <a href="/docs/api/admin-graphql/2025-01/objects/AccessScope">requestedAccessScopes</a>:
+        AccessScope!
+        The access scopes requested by the app. Lists the access scopes the app has declared in its configuration. Merchant must grant approval to these scopes for the app to be installed.
+      </li>
+      <li>
+        <a href="/docs/api/admin-graphql/2025-01/objects/Image">screenshots</a>:
+        Image!
+        Screenshots of the app.
+      </li>
+      <li>
+        <a href="/docs/api/admin-graphql/2025-01/scalars/Boolean">shopifyDeveloped</a>:
+        Boolean!
+        Whether the app was developed by Shopify.
+      </li>
+      <li>
+        <a href="/docs/api/admin-graphql/2025-01/scalars/String">title</a>:
+        String!
+        Name of the app.
+      </li>
+      <li>
+        <a href="/docs/api/admin-graphql/2025-01/scalars/String">uninstallMessage</a>:
+        String!
+        Message that appears when the app is uninstalled. For example:
+By removing this app, you will no longer be able to publish products to MySocialSite or view this app in your Shopify admin. You can re-enable this channel at any time.
+      </li>
+      <li>
+        <a href="/docs/api/admin-graphql/2025-01/scalars/URL">uninstallUrl</a>:
+        URL
+        Webpage where you can uninstall the app.
+      </li>
+      <li>
+        <a href="/docs/api/admin-graphql/2025-01/scalars/String">webhookApiVersion</a>:
+        String!
+        The webhook API version for the app.
+      </li>
+  </ul>
+
+
+<h2>Examples</h2>
+<ul>
+  <li>
+  </li>
+</ul>
+
+
+      

@@ -1,0 +1,40 @@
+{
+  "name": "storefrontAccessTokenDelete",
+  "category": "admin-graphql",
+  "operationType": "MUTATION",
+  "version": "2025-01",
+  "description": "Deletes a storefront access token.",
+  "accessScopes": null,
+  "arguments": [
+    {
+      "name": "input",
+      "type": "StorefrontAccessTokenDeleteInput!",
+      "description": "Provides the input fields required to delete a storefront access token.",
+      "docUrl": "/docs/api/admin-graphql/2025-01/input-objects/StorefrontAccessTokenDeleteInput"
+    }
+  ],
+  "returns": [
+    {
+      "name": "deletedStorefrontAccessTokenId",
+      "type": "ID",
+      "description": "The ID of the deleted storefront access token.",
+      "docUrl": "/docs/api/admin-graphql/2025-01/scalars/ID"
+    },
+    {
+      "name": "userErrors",
+      "type": "UserError!",
+      "description": "The list of errors that occurred from executing the mutation.",
+      "docUrl": "/docs/api/admin-graphql/2025-01/objects/UserError"
+    }
+  ],
+  "examples": [
+    {
+      "description": "Delete a Storefront Access Token.",
+      "code": "        Curl example: \"curl -X POST \\\nhttps://your-development-store.myshopify.com/admin/api/2025-01/graphql.json \\\n-H 'Content-Type: application/json' \\\n-H 'X-Shopify-Access-Token: {access_token}' \\\n-d '{\\n\\\"query\\\": \\\"mutation storefrontAccessTokenDelete($input: StorefrontAccessTokenDeleteInput!) { storefrontAccessTokenDelete(input: $input) { deletedStorefrontAccessTokenId userErrors { field message } } }\\\",\\n \\\"variables\\\": {\\n    \\\"input\\\": {\\n      \\\"id\\\": \\\"gid://shopify/StorefrontAccessToken/55270800\\\"\\n    }\\n  }\\n}'\n        Node example: \"const client = new shopify.clients.Graphql({session});\\nconst data = await client.query({\\n  data: {\\n    \\\"query\\\": `mutation storefrontAccessTokenDelete($input: StorefrontAccessTokenDeleteInput!) {\\n      storefrontAccessTokenDelete(input: $input) {\\n        deletedStorefrontAccessTokenId\\n        userErrors {\\n          field\\n          message\\n        }\\n      }\\n    }`,\\n    \\\"variables\\\": {\\n      \\\"input\\\": {\\n        \\\"id\\\": \\\"gid://shopify/StorefrontAccessToken/55270800\\\"\\n      }\\n    },\\n  },\\n});\\n\"        Ruby example: \"session = ShopifyAPI::Auth::Session.new(\\n  shop: \\\"your-development-store.myshopify.com\\\",\\n  access_token: access_token\\n)\\nclient = ShopifyAPI::Clients::Graphql::Admin.new(\\n  session: session\\n)\\n\\nquery = &lt;&lt;~QUERY\\n  mutation storefrontAccessTokenDelete($input: StorefrontAccessTokenDeleteInput!) {\\n    storefrontAccessTokenDelete(input: $input) {\\n      deletedStorefrontAccessTokenId\\n      userErrors {\\n        field\\n        message\\n      }\\n    }\\n  }\\nQUERY\\n\\nvariables = {\\n  \\\"input\\\": {\\n    \\\"id\\\": \\\"gid://shopify/StorefrontAccessToken/55270800\\\"\\n  }\\n}\\n\\nresponse = client.query(query: query, variables: variables)\\n\"        PHP example: \"use Shopify\\Clients\\Graphql;\\n\\n$client = new Graphql(\\\"your-development-store.myshopify.com\\\", $accessToken);\\n$query = &lt;&lt;&lt;QUERY\\n  mutation storefrontAccessTokenDelete($input: StorefrontAccessTokenDeleteInput!) {\\n    storefrontAccessTokenDelete(input: $input) {\\n      deletedStorefrontAccessTokenId\\n      userErrors {\\n        field\\n        message\\n      }\\n    }\\n  }\\nQUERY;\\n\\n$variables = [\\n  \\\"input\\\" =&gt; [\\n    \\\"id\\\" =&gt; \\\"gid://shopify/StorefrontAccessToken/55270800\\\",\\n  ],\\n];\\n\\n$response = $client-&gt;query([\\\"query\\\" =&gt; $query, \\\"variables\\\" =&gt; $variables]);\\n\"        Remix example: \"const { admin } = await authenticate.admin(request);\\n\\nconst response = await admin.graphql(\\n  `#graphql\\n  mutation storefrontAccessTokenDelete($input: StorefrontAccessTokenDeleteInput!) {\\n    storefrontAccessTokenDelete(input: $input) {\\n      deletedStorefrontAccessTokenId\\n      userErrors {\\n        field\\n        message\\n      }\\n    }\\n  }`,\\n  {\\n    variables: {\\n      \\\"input\\\": {\\n        \\\"id\\\": \\\"gid://shopify/StorefrontAccessToken/55270800\\\"\\n      }\\n    },\\n  },\\n);\\n\\nconst data = await response.json();\\n\"        Graphql query: \"mutation storefrontAccessTokenDelete($input: StorefrontAccessTokenDeleteInput!) {\\n  storefrontAccessTokenDelete(input: $input) {\\n    deletedStorefrontAccessTokenId\\n    userErrors {\\n      field\\n      message\\n    }\\n  }\\n}\""
+    },
+    {
+      "description": "Deletes an existing storefront access token",
+      "code": "        Curl example: \"curl -X POST \\\nhttps://your-development-store.myshopify.com/admin/api/2025-01/graphql.json \\\n-H 'Content-Type: application/json' \\\n-H 'X-Shopify-Access-Token: {access_token}' \\\n-d '{\\n\\\"query\\\": \\\"mutation storefrontAccessTokenDelete($id: ID!) { storefrontAccessTokenDelete(input: {id: $id}) { userErrors { field message } } }\\\",\\n \\\"variables\\\": {\\n    \\\"id\\\": \\\"gid://shopify/StorefrontAccessToken/55270800\\\"\\n  }\\n}'\n        Node example: \"const client = new shopify.clients.Graphql({session});\\nconst data = await client.query({\\n  data: {\\n    \\\"query\\\": `mutation storefrontAccessTokenDelete($id: ID!) {\\n      storefrontAccessTokenDelete(input: {id: $id}) {\\n        userErrors {\\n          field\\n          message\\n        }\\n      }\\n    }`,\\n    \\\"variables\\\": {\\n      \\\"id\\\": \\\"gid://shopify/StorefrontAccessToken/55270800\\\"\\n    },\\n  },\\n});\\n\"        Ruby example: \"session = ShopifyAPI::Auth::Session.new(\\n  shop: \\\"your-development-store.myshopify.com\\\",\\n  access_token: access_token\\n)\\nclient = ShopifyAPI::Clients::Graphql::Admin.new(\\n  session: session\\n)\\n\\nquery = &lt;&lt;~QUERY\\n  mutation storefrontAccessTokenDelete($id: ID!) {\\n    storefrontAccessTokenDelete(input: {id: $id}) {\\n      userErrors {\\n        field\\n        message\\n      }\\n    }\\n  }\\nQUERY\\n\\nvariables = {\\n  \\\"id\\\": \\\"gid://shopify/StorefrontAccessToken/55270800\\\"\\n}\\n\\nresponse = client.query(query: query, variables: variables)\\n\"        PHP example: \"use Shopify\\Clients\\Graphql;\\n\\n$client = new Graphql(\\\"your-development-store.myshopify.com\\\", $accessToken);\\n$query = &lt;&lt;&lt;QUERY\\n  mutation storefrontAccessTokenDelete($id: ID!) {\\n    storefrontAccessTokenDelete(input: {id: $id}) {\\n      userErrors {\\n        field\\n        message\\n      }\\n    }\\n  }\\nQUERY;\\n\\n$variables = [\\n  \\\"id\\\" =&gt; \\\"gid://shopify/StorefrontAccessToken/55270800\\\",\\n];\\n\\n$response = $client-&gt;query([\\\"query\\\" =&gt; $query, \\\"variables\\\" =&gt; $variables]);\\n\"        Remix example: \"const { admin } = await authenticate.admin(request);\\n\\nconst response = await admin.graphql(\\n  `#graphql\\n  mutation storefrontAccessTokenDelete($id: ID!) {\\n    storefrontAccessTokenDelete(input: {id: $id}) {\\n      userErrors {\\n        field\\n        message\\n      }\\n    }\\n  }`,\\n  {\\n    variables: {\\n      \\\"id\\\": \\\"gid://shopify/StorefrontAccessToken/55270800\\\"\\n    },\\n  },\\n);\\n\\nconst data = await response.json();\\n\"        Graphql query: \"mutation storefrontAccessTokenDelete($id: ID!) {\\n  storefrontAccessTokenDelete(input: {id: $id}) {\\n    userErrors {\\n      field\\n      message\\n    }\\n  }\\n}\""
+    }
+  ]
+}

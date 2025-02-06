@@ -1,0 +1,37 @@
+{
+  "name": "delegateAccessTokenCreate",
+  "category": "admin-graphql",
+  "operationType": "MUTATION",
+  "version": "2025-01",
+  "description": "Creates a delegate access token.",
+  "accessScopes": null,
+  "arguments": [
+    {
+      "name": "input",
+      "type": "DelegateAccessTokenInput!",
+      "description": "The input fields for creating a delegate access token.",
+      "docUrl": "/docs/api/admin-graphql/2025-01/input-objects/DelegateAccessTokenInput"
+    }
+  ],
+  "returns": [
+    {
+      "name": "delegateAccessToken",
+      "type": "DelegateAccessToken",
+      "description": "The delegate access token.",
+      "docUrl": "/docs/api/admin-graphql/2025-01/objects/DelegateAccessToken"
+    },
+    {
+      "name": "shop",
+      "type": "Shop!",
+      "description": "The user's shop.",
+      "docUrl": "/docs/api/admin-graphql/2025-01/objects/Shop"
+    },
+    {
+      "name": "userErrors",
+      "type": "DelegateAccessTokenCreateUserError!",
+      "description": "The list of errors that occurred from executing the mutation.",
+      "docUrl": "/docs/api/admin-graphql/2025-01/objects/DelegateAccessTokenCreateUserError"
+    }
+  ],
+  "examples": []
+}

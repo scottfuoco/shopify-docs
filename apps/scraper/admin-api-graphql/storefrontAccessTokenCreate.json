@@ -1,0 +1,42 @@
+{
+  "name": "storefrontAccessTokenCreate",
+  "category": "admin-graphql",
+  "operationType": "MUTATION",
+  "version": "2025-01",
+  "description": "Creates a storefront access token for use with the Storefront API. An app can have a maximum of 100 active storefront access tokens for each shop.",
+  "accessScopes": null,
+  "arguments": [
+    {
+      "name": "input",
+      "type": "StorefrontAccessTokenInput!",
+      "description": "Provides the input fields for creating a storefront access token.",
+      "docUrl": "/docs/api/admin-graphql/2025-01/input-objects/StorefrontAccessTokenInput"
+    }
+  ],
+  "returns": [
+    {
+      "name": "shop",
+      "type": "Shop!",
+      "description": "The user's shop.",
+      "docUrl": "/docs/api/admin-graphql/2025-01/objects/Shop"
+    },
+    {
+      "name": "storefrontAccessToken",
+      "type": "StorefrontAccessToken",
+      "description": "The storefront access token.",
+      "docUrl": "/docs/api/admin-graphql/2025-01/objects/StorefrontAccessToken"
+    },
+    {
+      "name": "userErrors",
+      "type": "UserError!",
+      "description": "The list of errors that occurred from executing the mutation.",
+      "docUrl": "/docs/api/admin-graphql/2025-01/objects/UserError"
+    }
+  ],
+  "examples": [
+    {
+      "description": "Create a Storefront Access Token",
+      "code": "        Curl example: \"curl -X POST \\\nhttps://your-development-store.myshopify.com/admin/api/2025-01/graphql.json \\\n-H 'Content-Type: application/json' \\\n-H 'X-Shopify-Access-Token: {access_token}' \\\n-d '{\\n\\\"query\\\": \\\"mutation StorefrontAccessTokenCreate($input: StorefrontAccessTokenInput!) { storefrontAccessTokenCreate(input: $input) { userErrors { field message } shop { id } storefrontAccessToken { accessScopes { handle } accessToken title } } }\\\",\\n \\\"variables\\\": {\\n    \\\"input\\\": {\\n      \\\"title\\\": \\\"New Storefront Access Token\\\"\\n    }\\n  }\\n}'\\n\"        Node example: \"const client = new shopify.clients.Graphql({session});\\nconst data = await client.query({\\n  data: {\\n    \\\"query\\\": `mutation StorefrontAccessTokenCreate($input: StorefrontAccessTokenInput!) {\\n      storefrontAccessTokenCreate(input: $input) {\\n        userErrors {\\n          field\\n          message\\n        }\\n        shop {\\n          id\\n        }\\n        storefrontAccessToken {\\n          accessScopes {\\n            handle\\n          }\\n          accessToken\\n          title\\n        }\\n      }\\n    }`,\\n    \\\"variables\\\": {\\n      \\\"input\\\": {\\n        \\\"title\\\": \\\"New Storefront Access Token\\\"\\n      }\\n    },\\n  },\\n});\\n\"        Ruby example: \"session = ShopifyAPI::Auth::Session.new(\\n  shop: \\\"your-development-store.myshopify.com\\\",\\n  access_token: access_token\\n)\\nclient = ShopifyAPI::Clients::Graphql::Admin.new(\\n  session: session\\n)\\n\\nquery = &lt;&lt;~QUERY\\n  mutation StorefrontAccessTokenCreate($input: StorefrontAccessTokenInput!) {\\n    storefrontAccessTokenCreate(input: $input) {\\n      userErrors {\\n        field\\n        message\\n      }\\n      shop {\\n        id\\n      }\\n      storefrontAccessToken {\\n        accessScopes {\\n          handle\\n        }\\n        accessToken\\n        title\\n      }\\n    }\\n  }\\nQUERY\\n\\nvariables = {\\n  \\\"input\\\": {\\n    \\\"title\\\": \\\"New Storefront Access Token\\\"\\n  }\\n}\\n\\nresponse = client.query(query: query, variables: variables)\\n\"        PHP example: \"use Shopify\\Clients\\Graphql;\\n\\n$client = new Graphql(\\\"your-development-store.myshopify.com\\\", $accessToken);\\n$query = &lt;&lt;&lt;QUERY\\n  mutation StorefrontAccessTokenCreate($input: StorefrontAccessTokenInput!) {\\n    storefrontAccessTokenCreate(input: $input) {\\n      userErrors {\\n        field\\n        message\\n      }\\n      shop {\\n        id\\n      }\\n      storefrontAccessToken {\\n        accessScopes {\\n          handle\\n        }\\n        accessToken\\n        title\\n      }\\n    }\\n  }\\nQUERY;\\n\\n$variables = [\\n  \\\"input\\\" =&gt; [\\n    \\\"title\\\" =&gt; \\\"New Storefront Access Token\\\",\\n  ],\\n];\\n\\n$response = $client-&gt;query([\\\"query\\\" =&gt; $query, \\\"variables\\\" =&gt; $variables]);\\n\"        Remix example: \"const { admin } = await authenticate.admin(request);\\n\\nconst response = await admin.graphql(\\n  `#graphql\\n  mutation StorefrontAccessTokenCreate($input: StorefrontAccessTokenInput!) {\\n    storefrontAccessTokenCreate(input: $input) {\\n      userErrors {\\n        field\\n        message\\n      }\\n      shop {\\n        id\\n      }\\n      storefrontAccessToken {\\n        accessScopes {\\n          handle\\n        }\\n        accessToken\\n        title\\n      }\\n    }\\n  }`,\\n  {\\n    variables: {\\n      \\\"input\\\": {\\n        \\\"title\\\": \\\"New Storefront Access Token\\\"\\n      }\\n    },\\n  },\\n);\\n\\nconst data = await response.json();\\n\"        Graphql query: \"mutation StorefrontAccessTokenCreate($input: StorefrontAccessTokenInput!) {\\n  storefrontAccessTokenCreate(input: $input) {\\n    userErrors {\\n      field\\n      message\\n    }\\n    shop {\\n      id\\n    }\\n    storefrontAccessToken {\\n      accessScopes {\\n        handle\\n      }\\n      accessToken\\n      title\\n    }\\n  }\\n}\""
+    }
+  ]
+}

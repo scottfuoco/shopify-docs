@@ -1,0 +1,83 @@
+
+          <h1>AccessScope - admin-graphql - OBJECT</h1>
+
+<p>Version: 2025-01</p>
+
+<h2>Description:</h2>
+The permission required to access a Shopify Admin API or Storefront API resource for a shop. Merchants grant access scopes that are requested by applications.
+
+<h3>Access Scopes</h3>
+
+
+
+  <h2>Fields</h2>
+  <ul>
+      <li>
+        <a href="/docs/api/admin-graphql/2025-01/scalars/String">description</a>:
+        String! -
+        A description of the actions that the access scope allows an app to perform.
+      </li>
+      <li>
+        <a href="/docs/api/admin-graphql/2025-01/scalars/String">handle</a>:
+        String! -
+        A readable string that represents the access scope. The string usually follows the format `{action}_{resource}`. `{action}` is `read` or `write`, and `{resource}` is the resource that the action can be performed on. `{action}` and `{resource}` are separated by an underscore. For example, `read_orders` or `write_products`.
+      </li>
+  </ul>
+  <h2>Connections</h2>
+  <ul>
+  </ul>
+
+
+  <h2>Related queries</h2>
+  <ul>
+  </ul>
+
+  <h2>Related mutations</h2>
+  <ul>
+      <li>
+        <a href="/docs/api/admin-graphql/2025-01/mutations/appRevokeAccessScopes">appRevokeAccessScopes</a>
+        Revokes access scopes previously granted for an app installation.
+      </li>
+  </ul>
+
+  <h2>Related Unions</h2>
+  <ul>
+  </ul>
+
+<h2>Examples</h2>
+<ul>
+  <li>
+      <h3>Get the access scopes granted to an app installation</h3>
+      <pre>        Curl example: "curl -X POST \\\nhttps://your-development-store.myshopify.com/admin/api/2025-01/graphql.json \\\n-H 'Content-Type: application/json' \\\n-H 'X-Shopify-Access-Token: {access_token}' \\\n-d '{\n\"query\": \"query { appInstallation { accessScopes { handle description } } }\"\n}'\n"
+        Node example: "const client = new shopify.clients.Graphql({session});\nconst data = await client.query({\n  data: `query {\n    appInstallation {\n      accessScopes {\n        handle\n        description\n      }\n    }\n  }`,\n});\n"
+        Ruby example: "session = ShopifyAPI::Auth::Session.new(\n  shop: \"your-development-store.myshopify.com\",\n  access_token: access_token\n)\nclient = ShopifyAPI::Clients::Graphql::Admin.new(\n  session: session\n)\n\nquery = &lt;&lt;~QUERY\n  query {\n    appInstallation {\n      accessScopes {\n        handle\n        description\n      }\n    }\n  }\nQUERY\n\nresponse = client.query(query: query)\n"
+        PHP example: "use Shopify\\Clients\\Graphql;\n\n$client = new Graphql(\"your-development-store.myshopify.com\", $accessToken);\n$query = &lt;&lt;&lt;QUERY\n  query {\n    appInstallation {\n      accessScopes {\n        handle\n        description\n      }\n    }\n  }\nQUERY;\n\n$response = $client-&gt;query([\"query\" =&gt; $query]);\n"
+        Remix example: "const { admin } = await authenticate.admin(request);\n\nconst response = await admin.graphql(\n  `#graphql\n  query {\n    appInstallation {\n      accessScopes {\n        handle\n        description\n      }\n    }\n  }`,\n);\n\nconst data = await response.json();\n"
+        Graphql query: "query {\n  appInstallation {\n    accessScopes {\n      handle\n      description\n    }\n  }\n}"
+      </pre>
+      <pre>input: null</pre>
+      <pre>response: {
+  "data": {
+    "appInstallation": {
+      "accessScopes": [
+        {
+          "handle": "read_products",
+          "description": "Read products, variants, and collections"
+        },
+        {
+          "handle": "read_analytics",
+          "description": "Read analytics"
+        },
+        {
+          "handle": "read_locations",
+          "description": "Read locations"
+        }
+      ]
+    }
+  }
+}</pre>
+  </li>
+</ul>
+
+
+      

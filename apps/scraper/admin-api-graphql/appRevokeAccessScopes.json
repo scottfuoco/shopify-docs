@@ -1,0 +1,31 @@
+{
+  "name": "appRevokeAccessScopes",
+  "category": "admin-graphql",
+  "operationType": "MUTATION",
+  "version": "2025-01",
+  "description": "Revokes access scopes previously granted for an app installation.",
+  "accessScopes": "This mutation can only be run on the current app.",
+  "arguments": [
+    {
+      "name": "scopes",
+      "type": "String!",
+      "description": "The list of scope handles to revoke.",
+      "docUrl": "/docs/api/admin-graphql/2025-01/scalars/String"
+    }
+  ],
+  "returns": [
+    {
+      "name": "revoked",
+      "type": "AccessScope",
+      "description": "The list of scope handles that have been revoked.",
+      "docUrl": "/docs/api/admin-graphql/2025-01/objects/AccessScope"
+    },
+    {
+      "name": "userErrors",
+      "type": "AppRevokeAccessScopesAppRevokeScopeError!",
+      "description": "The list of errors that occurred from executing the mutation.",
+      "docUrl": "/docs/api/admin-graphql/2025-01/objects/AppRevokeAccessScopesAppRevokeScopeError"
+    }
+  ],
+  "examples": []
+}
