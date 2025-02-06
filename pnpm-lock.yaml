@@ -122,7 +122,7 @@ importers:
         specifier: ^3.10.0
         version: 3.10.0(react-hook-form@7.54.2(react@19.0.0))
       '@packages/db':
-        specifier: 1.0.0
+        specifier: 'workspace:'
         version: link:../../packages/db
       '@radix-ui/react-accordion':
         specifier: ^1.2.2
@@ -270,10 +270,10 @@ importers:
         version: 3.24.1
     devDependencies:
       '@tooling/eslint':
-        specifier: 0.0.0
+        specifier: 'workspace:'
         version: link:../../tooling/eslint
       '@tooling/tsconfig':
-        specifier: 0.0.0
+        specifier: 'workspace:'
         version: link:../../tooling/typescript
       '@types/node':
         specifier: ^22
@@ -336,9 +336,6 @@ importers:
       drizzle-kit:
         specifier: ^0.30.4
         version: 0.30.4
-      drizzle-seed:
-        specifier: ^0.3.1
-        version: 0.3.1(drizzle-orm@0.39.2(@opentelemetry/api@1.9.0)(@types/react@19.0.8)(postgres@3.4.5)(react@19.0.0))
       eslint:
         specifier: 'catalog:'
         version: 9.19.0(jiti@2.4.2)
@@ -3188,14 +3185,6 @@ packages:
       sql.js:
         optional: true
       sqlite3:
-        optional: true
-
-  drizzle-seed@0.3.1:
-    resolution: {integrity: sha512-F/0lgvfOAsqlYoHM/QAGut4xXIOXoE5VoAdv2FIl7DpGYVXlAzKuJO+IphkKUFK3Dz+rFlOsQLnMNrvoQ0cx7g==}
-    peerDependencies:
-      drizzle-orm: '>=0.36.4'
-    peerDependenciesMeta:
-      drizzle-orm:
         optional: true
 
   drizzle-zod@0.7.0:
@@ -7918,12 +7907,6 @@ snapshots:
       '@types/react': 19.0.8
       postgres: 3.4.5
       react: 19.0.0
-
-  drizzle-seed@0.3.1(drizzle-orm@0.39.2(@opentelemetry/api@1.9.0)(@types/react@19.0.8)(postgres@3.4.5)(react@19.0.0)):
-    dependencies:
-      pure-rand: 6.1.0
-    optionalDependencies:
-      drizzle-orm: 0.39.2(@opentelemetry/api@1.9.0)(@types/react@19.0.8)(postgres@3.4.5)(react@19.0.0)
 
   drizzle-zod@0.7.0(drizzle-orm@0.39.2(@opentelemetry/api@1.9.0)(@types/react@19.0.8)(postgres@3.4.5)(react@19.0.0))(zod@3.24.1):
     dependencies:
