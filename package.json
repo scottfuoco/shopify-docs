@@ -8,7 +8,7 @@
     "typescript": "catalog:"
   },
   "engines": {
-    "node": ">=22.0.0"
+    "node": "22.x.x"
   },
   "packageManager": "pnpm@10.2.0",
   "private": true,
